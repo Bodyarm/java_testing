@@ -12,11 +12,11 @@ public class giv_hello_world {
     System.out.println("Площадь квадрата со стороной "+l+ " = "+ s);
     double lll = 5;
 
-    Square sq = new Square(5);
-    System.out.println("Square of a square with len = " + sq.l + " equal " + area(sq));
+    Square sq = new Square(12);
+    System.out.println("Square of a square with len = " + sq.l + " equal " + sq.area());
 
-    Rectangle rec = new Rectangle(4,9);
-    System.out.println("Пдощадь прямоугольника со сторонами " + rec.a + " и " + rec.b+" = " + area(rec));
+    Rectangle rec = new Rectangle(5,9);
+    System.out.println("Пдощадь прямоугольника со сторонами " + rec.a + " и " + rec.b+" = " + rec.area());
   }
 
   public static void hello(){
@@ -27,10 +27,6 @@ public class giv_hello_world {
     System.out.println("Hello, " +somebody + "!" );
   }
 
-  public static double area(Square s){
-    return s.l * s.l;
-  }
-  public static double area(Rectangle r){
-    return r.a*r.b;
-  }
+
+
 }
