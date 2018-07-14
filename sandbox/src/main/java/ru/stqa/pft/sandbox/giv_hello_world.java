@@ -17,6 +17,11 @@ public class giv_hello_world {
 
     Rectangle rec = new Rectangle(5,9);
     System.out.println("Пдощадь прямоугольника со сторонами " + rec.a + " и " + rec.b+" = " + rec.area());
+
+    //-----------------------
+    System.out.println("---------------------------");
+    Point dot1 = new Point(3,4);
+    System.out.println("Создана точка с новым координатами: x=" + dot1.x  + " y="+ dot1.y);
   }
 
   public static void hello(){
