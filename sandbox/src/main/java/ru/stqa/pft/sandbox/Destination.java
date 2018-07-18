@@ -20,7 +20,7 @@ public class Destination {
 
     double desM;
 
-    desM = pm1.distance(pm1,pm2);
+    desM = pm1.distance(pm2);
     System.out.println("Расстояние между 2 токами: "+ desM);
   }
 

@@ -46,7 +46,7 @@ public class PointMTests {
     PointM p1 = new PointM(-5,5);
     PointM p2 = new PointM(5,5);
 
-    Assert.assertEquals(p1.distance(p1,p2), 10.0);
+    Assert.assertEquals(p1.distance(p2), 10.0);
   }
 
   @Test
@@ -55,7 +55,7 @@ public class PointMTests {
     PointM p1 = new PointM(-1,1);
     PointM p2 = new PointM(-5,-2);
 
-    Assert.assertEquals(p1.distance(p1,p2), 5.0);
+    Assert.assertEquals(p1.distance(p2), 5.0);
   }
 
   @Test
@@ -64,7 +64,7 @@ public class PointMTests {
     PointM p1 = new PointM(-1,1);
     PointM p2 = new PointM(2,-3);
 
-    Assert.assertEquals(p1.distance(p1,p2), 5.0);
+    Assert.assertEquals(p1.distance(p2), 5.0);
   }
 
   @Test
@@ -73,7 +73,7 @@ public class PointMTests {
     PointM p1 = new PointM(1,2);
     PointM p2 = new PointM(-3,-1);
 
-    Assert.assertEquals(p1.distance(p1,p2), 5.0);
+    Assert.assertEquals(p1.distance(p2), 5.0);
   }
 
   @Test
@@ -82,7 +82,7 @@ public class PointMTests {
     PointM p1 = new PointM(-1,3);
     PointM p2 = new PointM(3,0);
 
-    Assert.assertEquals(p1.distance(p1,p2), 5.0);
+    Assert.assertEquals(p1.distance(p2), 5.0);
   }
 
   @Test
@@ -91,7 +91,7 @@ public class PointMTests {
     PointM p1 = new PointM(-1,1);
     PointM p2 = new PointM(0,1);
 
-    Assert.assertEquals(p1.distance(p1,p2), 1.0);
+    Assert.assertEquals(p1.distance(p2), 1.0);
   }
 
   @Test
@@ -100,7 +100,7 @@ public class PointMTests {
     PointM p1 = new PointM(7,0);
     PointM p2 = new PointM(4,4);
 
-    Assert.assertEquals(p1.distance(p1,p2), 5.0);
+    Assert.assertEquals(p1.distance(p2), 5.0);
   }
 
   @Test
@@ -109,7 +109,7 @@ public class PointMTests {
     PointM p1 = new PointM(0,10);
     PointM p2 = new PointM(3,6);
 
-    Assert.assertEquals(p1.distance(p1,p2), 5.0);
+    Assert.assertEquals(p1.distance(p2), 5.0);
   }
 
   @Test
@@ -118,7 +118,7 @@ public class PointMTests {
     PointM p1 = new PointM(0,0);
     PointM p2 = new PointM(3,4);
 
-    Assert.assertEquals(p1.distance(p1,p2), 5.0);
+    Assert.assertEquals(p1.distance(p2), 5.0);
   }
 
   @Test
@@ -127,7 +127,7 @@ public class PointMTests {
     PointM p1 = new PointM(40,30);
     PointM p2 = new PointM(0,0);
 
-    Assert.assertEquals(p1.distance(p1,p2), 50.0);
+    Assert.assertEquals(p1.distance(p2), 50.0);
   }
 
   @Test
@@ -136,7 +136,7 @@ public class PointMTests {
     PointM p1 = new PointM(-17,17);
     PointM p2 = new PointM(-17,17);
 
-    Assert.assertEquals(p1.distance(p1,p2), 0.0);
+    Assert.assertEquals(p1.distance(p2), 0.0);
   }
 
   @Test
@@ -145,7 +145,7 @@ public class PointMTests {
     PointM p1 = new PointM(0,0);
     PointM p2 = new PointM(0,0);
 
-    Assert.assertEquals(p1.distance(p1,p2), 0.0);
+    Assert.assertEquals(p1.distance(p2), 0.0);
   }
 
   @Test
@@ -154,7 +154,7 @@ public class PointMTests {
     PointM p1 = new PointM(8,9);
     PointM p2 = new PointM(4,6);
 
-    Assert.assertEquals(p1.distance(p1,p2), 5.0);
+    Assert.assertEquals(p1.distance(p2), 5.0);
   }
 
   @Test
@@ -163,7 +163,7 @@ public class PointMTests {
     PointM p1 = new PointM(1,1);
     PointM p2 = new PointM(3,3);
 
-    Assert.assertEquals(p1.distance(p1,p2), 2.8284271247461903);
+    Assert.assertEquals(p1.distance(p2), 2.8284271247461903);
   }
 
 }
