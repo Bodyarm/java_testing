@@ -21,6 +21,15 @@ public class GroupCreationTests {
     login("admin", "secret");
   }
 
+  @Test
+  public void testGroupCreation() {
+    gotoGroupPage();
+    initGroupCreation();
+    fillGroupForm(new GroupData("test1", "test2", "test3"));
+    submitGroupCreation();
+    returnToGroupPage();
+  }
+
   private void login(String username, String password) {
     wd.findElement(By.name("user")).click();
     wd.findElement(By.name("user")).clear();
@@ -29,15 +38,6 @@ public class GroupCreationTests {
     wd.findElement(By.name("pass")).clear();
     wd.findElement(By.name("pass")).sendKeys(password);
     wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
-  }
-
-  @Test
-  public void testGroupCreation() {
-    gotoGroupPage();
-    initGroupCreation();
-    fillGroupForm(new GroupData("test1", "test2", "test3"));
-    submitGroupCreation();
-    returnToGroupPage();
   }
 
   private void returnToGroupPage() {
