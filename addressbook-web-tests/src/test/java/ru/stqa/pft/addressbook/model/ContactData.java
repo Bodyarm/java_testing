@@ -83,7 +83,7 @@ public class ContactData {
     return email1;
   }
 
-  public String getEmial2() {
+  public String getEmail2() {
     return emial2;
   }
 
