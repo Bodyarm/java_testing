@@ -18,7 +18,22 @@ public class ContactData {
   private final String address2;
   private final String group;
 
-  public ContactData(String firstname, String middlename, String lastname, String nickname, String title, String company, String address1, String phome, String pmobile, String pwork, String pfax, String email1, String emial2, String email3, String address2, String group) {
+  public ContactData(String firstname,
+                     String middlename,
+                     String lastname,
+                     String nickname,
+                     String title,
+                     String company,
+                     String address1,
+                     String phome,
+                     String pmobile,
+                     String pwork,
+                     String pfax,
+                     String email1,
+                     String email2,
+                     String email3,
+                     String address2,
+                     String group) {
     this.firstname = firstname;
     this.middlename = middlename;
     this.lastname = lastname;
@@ -31,7 +46,7 @@ public class ContactData {
     this.pwork = pwork;
     this.pfax = pfax;
     this.email1 = email1;
-    this.emial2 = emial2;
+    this.emial2 = email2;
     this.email3 = email3;
     this.address2 = address2;
     this.group = group;

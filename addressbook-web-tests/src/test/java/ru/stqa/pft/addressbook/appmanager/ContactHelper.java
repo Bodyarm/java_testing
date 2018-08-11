@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 public class ContactHelper extends BaseHelper {
   public ContactHelper(WebDriver wd) {
@@ -61,5 +62,16 @@ public class ContactHelper extends BaseHelper {
 
   public void acceptDeleteContact() {
     accept();
+  }
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.name("selected[]"));
+  }
+
+  public void createContact(ContactData contact){
+    initContactCreation();
+    fillContactForm(contact,true);
+    submitContactCreation();
+    click(By.linkText("home"));
   }
 }
