@@ -9,7 +9,7 @@ import java.util.List;
 
 public class GroupCreationTests extends TestBase{
 
-  @Test
+  @Test(enabled = false)
   public void testGroupCreation() {
     app.getNavigationHelper().gotoGroupPage();
     List<GroupData> before = app.getGroupHelper().getGroupList();
@@ -28,5 +28,21 @@ public class GroupCreationTests extends TestBase{
     before.add(cgroup);
     Assert.assertEquals(new HashSet<>(before),new HashSet<>(after));
   }
+
+  @Test
+  public void testGroupCreationLam() {
+    app.getNavigationHelper().gotoGroupPage();
+    List<GroupData> before = app.getGroupHelper().getGroupList();
+    GroupData cgroup = new GroupData("test45", null, null);
+    app.getGroupHelper().createGroup(cgroup);
+    List<GroupData> after = app.getGroupHelper().getGroupList();
+    Assert.assertEquals(before.size(),after.size() - 1);
+
+
+    cgroup.setId(after.stream().max((o1, o2) -> Integer.compare(o1.getId(),o2.getId())).get().getId());
+    before.add(cgroup);
+    Assert.assertEquals(new HashSet<>(before),new HashSet<>(after));
+  }
+
 
 }
