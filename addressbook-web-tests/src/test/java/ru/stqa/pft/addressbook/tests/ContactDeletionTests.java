@@ -15,13 +15,22 @@ public class ContactDeletionTests extends TestBase{
     app.getNavigationHelper().gotoHomePage();
     if(! app.getContactHelper().isThereAContact()) {
       app.getContactHelper().createContact(new ContactData(
-              "Test","Test Middlename",
-              "Test LastName","Test NickName",
-              "Test Title","Test Company",
-              "Test address","999","921",
-              "812","499","test@test.ru",
-              "test@mail.ru","test@yandex.ru",
-              "Test address2","test1"
+              "Test",
+              "Test Middlename",
+              "Test LastName",
+              "Test NickName",
+              "Test Title",
+              "Test Company",
+              "Test address",
+              "999",
+              "921",
+              "812",
+              "499",
+              "test@test.ru",
+              "test@mail.ru",
+              "test@yandex.ru",
+              "Test address2",
+              "test1"
               )
       );
     }

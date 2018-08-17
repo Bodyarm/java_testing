@@ -1,24 +1,26 @@
 package ru.stqa.pft.addressbook.model;
 
 public class ContactData {
-  private final String firstname;
-  private final String middlename;
-  private final String lastname;
-  private final String nickname;
-  private final String title;
-  private final String company;
-  private final String address1;
-  private final String phome;
-  private final String pmobile;
-  private final String pwork;
-  private final String pfax;
-  private final String email1;
-  private final String emial2;
-  private final String email3;
-  private final String address2;
-  private final String group;
+  private int id;
+  private String firstname;
+  private String middlename;
+  private String lastname;
+  private String nickname;
+  private String title;
+  private String company;
+  private String address1;
+  private String phome;
+  private String pmobile;
+  private String pwork;
+  private String pfax;
+  private String email1;
+  private String emial2;
+  private String email3;
+  private String address2;
+  private String group;
 
-  public ContactData(String firstname,
+  public ContactData(int id,
+                     String firstname,
                      String middlename,
                      String lastname,
                      String nickname,
@@ -34,6 +36,7 @@ public class ContactData {
                      String email3,
                      String address2,
                      String group) {
+    this.id = id;
     this.firstname = firstname;
     this.middlename = middlename;
     this.lastname = lastname;
@@ -51,6 +54,45 @@ public class ContactData {
     this.address2 = address2;
     this.group = group;
   }
+
+  public ContactData(
+                     String firstname,
+                     String middlename,
+                     String lastname,
+                     String nickname,
+                     String title,
+                     String company,
+                     String address1,
+                     String phome,
+                     String pmobile,
+                     String pwork,
+                     String pfax,
+                     String email1,
+                     String email2,
+                     String email3,
+                     String address2,
+                     String group) {
+    this.id = id;
+    this.firstname = firstname;
+    this.middlename = middlename;
+    this.lastname = lastname;
+    this.nickname = nickname;
+    this.title = title;
+    this.company = company;
+    this.address1 = address1;
+    this.phome = phome;
+    this.pmobile = pmobile;
+    this.pwork = pwork;
+    this.pfax = pfax;
+    this.email1 = email1;
+    this.emial2 = email2;
+    this.email3 = email3;
+    this.address2 = address2;
+    this.group = group;
+  }
+
+
+  public int getId() {return  id;}
 
   public String getFirstname() {
     return firstname;

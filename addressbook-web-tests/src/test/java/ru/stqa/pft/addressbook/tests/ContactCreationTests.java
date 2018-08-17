@@ -14,13 +14,21 @@ public class ContactCreationTests extends TestBase{
     }
     app.getNavigationHelper().gotoHomePage();
     app.getContactHelper().createContact(new ContactData(
-            "Test", "Test Middlename",
-            "Test LastName", "Test NickName",
-            "Test Title", "Test Company",
-            "Test address", "999",
-            "921", "812", "499",
-            "test@test.ru", "test@mail.ru",
-            "test@yandex.ru", "Test address2",
+            "test",
+            "Test Middlename",
+            "Test LastName",
+            "Test NickName",
+            "Test Title",
+            "Test Company",
+            "Test address",
+            "999",
+            "921",
+            "812",
+            "499",
+            "test@test.ru",
+            "test@mail.ru",
+            "test@yandex.ru",
+            "Test address2",
             "test1"
              )
     );
