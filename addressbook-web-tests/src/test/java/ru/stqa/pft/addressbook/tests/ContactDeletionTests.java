@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.GroupData;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class ContactDeletionTests extends TestBase{
@@ -41,14 +42,23 @@ public class ContactDeletionTests extends TestBase{
 
     List<ContactData> before = app.getContactHelper().getContactList();
 
-    app.getContactHelper().selectContact();
+    app.getContactHelper().selectContact(before.size()-1);
     app.getContactHelper().deleteContact();
     app.getContactHelper().acceptDeleteContact();
     app.getNavigationHelper().gotoHomePage();
 
+
     List<ContactData> after = app.getContactHelper().getContactList();
 
-    Assert.assertEquals(before.size(),after.size()+1);
+    before.remove(before.remove(before.size()-1));
+
+    Comparator<? super ContactData> byId = (c1, c2) -> Integer.compare(c1.getId(), c2.getId());
+    before.sort(byId);
+    after.sort(byId);
+
+
+    Assert.assertEquals(before.size(),after.size());
+    Assert.assertEquals(before,after);
 
   }
 }
