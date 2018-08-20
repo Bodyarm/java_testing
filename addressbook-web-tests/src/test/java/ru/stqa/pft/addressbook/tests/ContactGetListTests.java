@@ -26,9 +26,15 @@ public class ContactGetListTests extends TestBase{
     List<ContactData> before = app.getContactHelper().getContactList();
     System.out.println("-------------------------------");
     System.out.println("Количество контактов: "+before.size());
-    System.out.println("Первый контакт из теста:");
-    System.out.println(before.get(0).getId() + " " + before.get(0).getFirstname());
+
+
+
+    for( ContactData element: before){
+      System.out.println(element.getId() + " "+ element.getFirstname());
+    }
+
     app.getNavigationHelper().gotoHomePage();
+
   }
 
 }
