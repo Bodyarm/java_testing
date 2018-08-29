@@ -1,6 +1,7 @@
 package ru.stqa.pft.addressbook.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.GroupData;
 
@@ -10,26 +11,26 @@ import java.util.List;
 
 public class GroupModificationTests extends TestBase {
 
+  @BeforeMethod
+  public void ensurePreconditions(){
+    app.getNavigationHelper().gotoGroupPage();
+    if (! app.getGroupHelper().isThereAGroup()){
+      app.getGroupHelper().createGroup(new GroupData("test1",null,null));
+    }
+  }
 
   @Test
   public void testGroupModification() {
-    app.getNavigationHelper().gotoGroupPage();
-    if (! app.getGroupHelper().isThereAGroup()){
-     app.getGroupHelper().createGroup(new GroupData("test1",null,null));
-    }
 
     List<GroupData> before = app.getGroupHelper().getGroupList();
+    int index = before.size() -1;
+    GroupData mgroup = new GroupData(before.get(index).getId(),"mod1","mod2","mod3");
 
-    app.getGroupHelper().selectGroup(before.size() -1);
-    app.getGroupHelper().initGroupModification();
-    GroupData mgroup = new GroupData(before.get(before.size()-1).getId(),"mod1","mod2","mod3");
-    app.getGroupHelper().fillGroupForm(mgroup);
-    app.getGroupHelper().submitGroupModification();
-    app.getGroupHelper().returnToGroupPage();
+    app.getGroupHelper().modifyGroup(index, mgroup);
 
     List<GroupData> after = app.getGroupHelper().getGroupList();
 
-    before.remove(before.size()-1);
+    before.remove(index);
     before.add(mgroup);
 
     Comparator<? super GroupData> byId = (c1, c2) -> Integer.compare(c1.getId(), c2.getId());
@@ -38,4 +39,6 @@ public class GroupModificationTests extends TestBase {
 
     Assert.assertEquals(new HashSet<>(before),new HashSet<>(after));
   }
+
+
 }
