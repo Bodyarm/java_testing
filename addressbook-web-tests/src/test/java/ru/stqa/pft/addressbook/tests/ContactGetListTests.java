@@ -1,26 +1,20 @@
 package ru.stqa.pft.addressbook.tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.GroupData;
 
-import javax.sound.midi.Soundbank;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ContactGetListTests extends TestBase{
 
   @Test
   public void testGetlist() {
-    app.getNavigationHelper().gotoGroupPage();
-    if (! app.getGroupHelper().isThereAGroup()){
-      app.getGroupHelper().createGroup(new GroupData("test1",null,null));
+    app.goTo().groupPage();
+    if (! app.group().isThereAGroup()){
+      app.group().create(new GroupData("test1",null,null));
     }
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().gotoHomePage();
 
     // пытаемся вычленить список контактов
     List<ContactData> before = app.getContactHelper().getContactList();
@@ -33,7 +27,7 @@ public class ContactGetListTests extends TestBase{
       System.out.println(element.getId() + " "+ element.getFirstname());
     }
 
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().gotoHomePage();
 
   }
 

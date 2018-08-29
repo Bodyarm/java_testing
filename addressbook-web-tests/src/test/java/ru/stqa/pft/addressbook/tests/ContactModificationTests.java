@@ -13,11 +13,11 @@ public class ContactModificationTests extends TestBase{
 
   @BeforeMethod
   public void ensurePreconditions(){
-    app.getNavigationHelper().gotoGroupPage();
-    if (! app.getGroupHelper().isThereAGroup()){
-      app.getGroupHelper().createGroup(new GroupData("test1",null,null));
+    app.goTo().groupPage();
+    if (! app.group().isThereAGroup()){
+      app.group().create(new GroupData("test1",null,null));
     }
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().gotoHomePage();
     if(! app.getContactHelper().isThereAContact()) {
       app.getContactHelper().createContact(new ContactData(
                       "Test","Test Middlename",
@@ -57,7 +57,7 @@ public class ContactModificationTests extends TestBase{
             null);
     app.getContactHelper().fillContactForm(modcontact ,false);
     app.getContactHelper().submitContactModification();
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().gotoHomePage();
 
     before.add(modcontact);
     before.get(before.size()-1).setId(before.get(0).getId());

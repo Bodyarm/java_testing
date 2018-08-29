@@ -13,11 +13,11 @@ public class ContactDeletionTests extends TestBase{
 
   @BeforeMethod
   public void ensurePreconditions(){
-    app.getNavigationHelper().gotoGroupPage();
-    if (! app.getGroupHelper().isThereAGroup()){
-      app.getGroupHelper().createGroup(new GroupData("test1",null,null));
+    app.goTo().groupPage();
+    if (! app.group().isThereAGroup()){
+      app.group().create(new GroupData("test1",null,null));
     }
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().gotoHomePage();
     if(! app.getContactHelper().isThereAContact()) {
       app.getContactHelper().createContact(new ContactData(
                       "Test","Test Middlename",
@@ -41,7 +41,7 @@ public class ContactDeletionTests extends TestBase{
     app.getContactHelper().selectContact(before.size()-1);
     app.getContactHelper().deleteContact();
     app.getContactHelper().acceptDeleteContact();
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().gotoHomePage();
 
 
     List<ContactData> after = app.getContactHelper().getContactList();
