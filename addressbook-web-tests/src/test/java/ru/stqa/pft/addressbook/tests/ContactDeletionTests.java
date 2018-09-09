@@ -15,7 +15,7 @@ public class ContactDeletionTests extends TestBase{
   public void ensurePreconditions(){
     app.goTo().groupPage();
     if (! app.group().isThereAGroup()){
-      app.group().create(new GroupData("test1",null,null));
+      app.group().create(new GroupData().withName("test1"));
     }
     app.goTo().gotoHomePage();
     if(! app.getContactHelper().isThereAContact()) {
